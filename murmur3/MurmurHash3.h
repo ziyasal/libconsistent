@@ -1,5 +1,5 @@
 //
-// Created by Ziya Sarikaya on 10.11.17.
+// Ref: https://github.com/aappleby/smhasher
 //
 
 #ifndef LIBCONSISTENT_MURMURHASH3_H
