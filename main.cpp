@@ -1,21 +1,17 @@
-
 #include <iostream>
 #include <thread>
-#include "scopeguard/ScopeGuard.h"
+#include "Defer.h"
 
-using namespace std;
-
-mutex mtx;
+std::mutex mtx;
 
 void print_thread_id(int id) {
-    // critical section (exclusive access to std::cout signaled by locking mtx)
     mtx.lock();
-    cout << "thread #" << id << '\n';
+    std::cout << "thread #" << id << '\n';
     mtx.unlock();
 }
 
 void deferredFunction() {
-    cout << "i'm deferred" << endl;
+    std::cout << "i'm deferred" << std::endl;
 }
 
 int main() {
